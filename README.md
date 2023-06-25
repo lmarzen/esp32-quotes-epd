@@ -126,7 +126,7 @@ Cut the low power pad for even longer battery life.
 
 ### Configuration, Compilation, and Upload
 
-1. Clone this repository or download and extract the .zip.
+Clone this repository or download and extract the .zip.
 
 Google Sheet
 
