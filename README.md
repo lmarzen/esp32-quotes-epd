@@ -126,33 +126,83 @@ Cut the low power pad for even longer battery life.
 
 ### Configuration, Compilation, and Upload
 
+1. Clone this repository or download and extract the .zip.
+
 Google Sheet
 
 1. First, you will need to create a Google sheet and store your quotes in the first column (i.e. column A). (https://docs.google.com/spreadsheet)
 
 2. Note down the Sheet ID, located in the URL. You will need to copy this into the Google Script you will set up next.
 
-3. Optionally specify an author for each quote. The author is indicated with an at sign, '@'. If you really want to include an at sign in a quote, you must escape it first with a backslash, '\\@'.
+<p float="left">
+  <img src="showcase/instructions/google-sheet.jpg" width="66%" />
+</p>
 
-4. You can force your own line breaks by starting new lines within the quotes cell using (Ctrl + Enter). The author will always be displayed on a new line.
+4. Optionally specify an author for each quote. The author is indicated with an at sign, '@'. If you really want to include an at sign in a quote, you must escape it first with a backslash, '\\@'.
+
+5. You can force your own line breaks by starting new lines within the quotes cell using (Ctrl + Enter). The author will always be displayed on a new line.
 
 Google Script
 
+1. Navigate to Google Apps Script. Google Apps Script enables us to create a script to that can interact with the Google Sheet we just created.
+
+<p float="left">
+  <img src="showcase/instructions/nav-to-apps-script.jpg" width="66%" />
+</p>
+
+2. Paste the contents of [code.gs](code.gs) into a new Google script. Don't forget to update the `sheet_id` variable to the Google Sheet ID you obtained from your sheet's URL earlier.
+
+<p float="left">
+  <img src="showcase/instructions/google-script-0.jpg" width="66%" />
+</p>
+
+3. Deploy the script.
+
+   a. In the top right corner, click `Deploy->New deployment`.
+
+   b. Click the gear next to `Select type`, then select `Web app`.
+<p float="left">
+  <img src="showcase/instructions/google-script-1.jpg" width="66%" />
+</p>
+   c. Give a description, then set `Who has access` to `Anyone`.
+<p float="left">
+  <img src="showcase/instructions/google-script-2.jpg" width="66%" />
+</p>
+   d. Click `Authorize access`.
+<p float="left">
+  <img src="showcase/instructions/google-script-3.jpg" width="66%" />
+</p>
+   e. Choose your account.
+<p float="left">
+  <img src="showcase/instructions/google-script-4.jpg" width="66%" />
+</p>
+   f. Click `Show Advanced` the `Go to <project_name> (unsafe)`.
+<p float="left">
+  <img src="showcase/instructions/google-script-5.jpg" width="66%" />
+</p>
+   g. Click `Allow`.
+<p float="left">
+  <img src="showcase/instructions/google-script-6.jpg" width="66%" />
+</p>
+   h. Then copy the `Deployment ID`. You will need to update the GS_DEPLOYMENT_ID with this string in [config.cpp](platformio/src/config.cpp).
+<p float="left">
+  <img src="showcase/instructions/google-script-7.jpg" width="66%" />
+</p>
+   
+
 PlatformIO for VSCode is used for managing dependencies, code compilation, and uploading to ESP32.
 
-1. Clone this repository or download and extract the .zip.
+1. Install VSCode.
 
-2. Install VSCode.
+2. Follow these instructions to install the PlatformIO extension for VSCode: https://platformio.org/install/ide?install=vscode
 
-3. Follow these instructions to install the PlatformIO extension for VSCode: https://platformio.org/install/ide?install=vscode
-
-4. Open the project in VSCode.
+3. Open the project in VSCode.
 
    a. File > Open Folder...
 
    b. Navigate to this project and select the folder called "platformio".
 
-5. Configure Options.
+4. Configure Options.
 
    - Most configuration options are located in [config.cpp](platformio/src/config.cpp), with a few  in [config.h](platformio/include/config.h).
 
@@ -172,7 +222,7 @@ PlatformIO for VSCode is used for managing dependencies, code compilation, and u
 
    - Comments explain each option in detail.
 
-6. Build and Upload Code.
+5. Build and Upload Code.
 
    a. Connect ESP32 to your computer via USB.
 
