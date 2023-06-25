@@ -60,7 +60,7 @@ function getRand() {
   return ContentService.createTextOutput(quote);
 }
 
-/* Each call read the next quote. Once we have shown all the quotes once,
+/* Each call reads the next quote. Once we have shown all the quotes once,
  * shuffle them.
  * Uses cell B1 as a pointer to the last read cell.
  */
