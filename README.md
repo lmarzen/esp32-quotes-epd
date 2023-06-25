@@ -1,28 +1,48 @@
-# ESP32 E-Paper Weather Display
+# ESP32 E-Paper Quote Display
 
-This is a weather display powered by a wifi-enabled ESP32 microcontroller and a 7.5in E-Paper (aka E-ink) display. Current and forecasted weather data is obtained from the OpenWeatherMap API. A sensor provides the display with accurate indoor temperature and humidity.
+Display motivational quotes on a 7.5in E-Paper (aka E-ink) display. Powered by a wifi-enabled, low-power ESP32 microcontroller. Quotes are retrieved from a Google spreadsheet, allowing for quick and easy management of your collection of inspiring quotes.
 
-The project draws ~14μA when sleeping and an estimated average of ~83mA during its ~10s wake period. The display can be configured to update as frequently as desired. When the refresh interval is set to 30 minutes, the device will run for >6 months on a single 5000mAh battery. The project displays accurate battery life percentage and can be recharged via a USB-C cable connected to a wall adapter or computer.
+The project draws ~14μA when sleeping and an estimated average of ~83mA during its ~15s wake period. The display can be configured to update as frequently as desired. When the refresh interval is set to 60 minutes, the device will run for >1 year on a single 5000mAh battery. A smaller battery will last many years if you only desire a daily quote. The project displays accurate battery life percentage and can be recharged via a USB-C cable connected to a wall adapter or computer.
+
+This project is an adaptation of my open-source e-paper weather display project (https://github.com/lmarzen/esp32-weather-epd).
 
 <p float="left">
-  <img src="showcase/assembled-demo-raleigh-front.jpg" />
-  <img src="showcase/assembled-demo-raleigh-side.jpg" width="49%" />
-  <img src="showcase/assembled-demo-raleigh-back.jpg" width="49%" />
+  <img src="showcase/assembled-demo-rohn-front.jpg" />
+  <img src="showcase/assembled-demo-side.jpg" width="49%" />
+  <img src="showcase/assembled-demo-back.jpg" width="49%" />
   <img src="showcase/assembled-demo-bottom-cover.jpg" width="49%" />
   <img src="showcase/assembled-demo-bottom-cover-removed.jpg" width="49%" />
 </p>
 
 I made a small stand by hollowing out a piece of wood from the bottom. On the back, I used a short USB extension cable so that I can charge the battery without needing to remove the components from the stand. I also wired a small reset button to refresh the display manually. Additionally, I 3d printed a cover for the bottom, which is held on by magnets. The E-paper screen is very thin, so I used a thin piece of acrylic to support it.
 
-There are configuration options for everything from location, time/date formats, units, and language to air quality index scale and hourly outlook graph bounds.
+## Features
 
-The hourly outlook graph (bottom right) shows a line indicating temperature and shaded bars indicating probability of precipitation.
+Quotes are managed through a google spreadsheet.
 
-Here are two examples utilizing various configuration options:
+The reset button can be used to manually cycle to the next quote.
+
+Multiple quote selection options,
+
+- Random - Choose a quote completely at random.
+- Shuffle - Displays each quote once before shuffling them.
+- Iterative - Loops through the quotes in order.
+
+Quotes are automatically scaled to fit the screen optimally.
+
+Alignment for quotes and authors can be controlled independently.
+
+Support for multiple fonts, I have included a number of open-source fonts. If you want to add more see [fonts/README](fonts/README) .
+
+
+
+Here are a handful of examples:
 
 <p float="left">
-  <img src="showcase/demo-new-york.jpg" width="49%" />
-  <img src="showcase/demo-london.jpg" width="49%" />
+  <img src="showcase/demo-new-york.jpg" width="24%" />
+  <img src="showcase/demo-london.jpg" width="24%" />
+  <img src="showcase/demo-new-york.jpg" width="24%" />
+  <img src="showcase/demo-london.jpg" width="24%" />
 </p>
 
 ## Setup Guide
@@ -51,7 +71,7 @@ FireBeetle 2 ESP32-E Microcontroller
 
   - Onboard WiFi.
 
-  - 520kB of RAM and 4MB of FLASH, enough to store lots of icons and fonts.
+  - 520kB of RAM and 4MB of FLASH, enough to store lots of fonts.
 
   - Low power consumption.
 
@@ -67,14 +87,6 @@ FireBeetle 2 ESP32-E Microcontroller
 
 
 - https://www.dfrobot.com/product-2195.html
-
-
-BME280 - Pressure, Temperature, and Humidity Sensor
-
-
-- Provides accurate indoor temperature and humidity.
-
-- Much faster than the DHT22, which requires a 2-second wait before reading temperature and humidity samples.
 
 
 3.7V Lipo Battery w/ 2 Pin JST Connector
