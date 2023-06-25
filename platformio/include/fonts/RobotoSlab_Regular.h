@@ -1,5 +1,6 @@
 #ifndef __FONTS_ROBOTOSLAB_REGULAR_H__
 #define __FONTS_ROBOTOSLAB_REGULAR_H__
+#include "RobotoSlab_Regular/RobotoSlab_Regular_12pt7b.h"
 #include "RobotoSlab_Regular/RobotoSlab_Regular_16pt7b.h"
 #include "RobotoSlab_Regular/RobotoSlab_Regular_20pt7b.h"
 #include "RobotoSlab_Regular/RobotoSlab_Regular_26pt7b.h"

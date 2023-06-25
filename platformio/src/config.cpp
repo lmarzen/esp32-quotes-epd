@@ -71,6 +71,8 @@ const String QUOTE_SELECTION = "shuffle";
 // contain just two fonts.
 // Alternatively, if you want more granularity then add more pairs of fonts to
 // QUOTE_FONTS.
+//
+// See config.h for a list of include fonts.
 const GFXfont *QUOTE_FONTS[] =
 {//quote body font         author font
   &FreeSerif_48pt7b,      &FreeSerif_26pt7b,
@@ -79,6 +81,7 @@ const GFXfont *QUOTE_FONTS[] =
   &Roboto_Regular_26pt7b, &Roboto_Regular_20pt7b,
   &Ubuntu_R_20pt7b,       &Ubuntu_R_20pt7b,
   &Ubuntu_R_16pt7b,       &Ubuntu_R_16pt7b
+  &Ubuntu_R_12pt7b,       &Ubuntu_R_12pt7b
 };
 const size_t QUOTE_FONTS_SZ = sizeof(QUOTE_FONTS) / sizeof(QUOTE_FONTS[0]);
 

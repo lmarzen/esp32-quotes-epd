@@ -41,26 +41,35 @@
 
 // FONTS
 // A handful of popular Open Source typefaces have been included with this
-// project for your convenience. Change the font by selecting its corresponding
-// header file.
+// project for your convenience.
 //
-//   FONT           HEADER FILE                    FAMILY          LICENSE
-//   FreeMono       "fonts/FreeMono.h"             GNU FreeFont    GNU GPL v3.0
-//   FreeSans       "fonts/FreeSans.h"             GNU FreeFont    GNU GPL v3.0
-//   FreeSerif      "fonts/FreeSerif.h"            GNU FreeFont    GNU GPL v3.0
-//   Lato           "fonts/Lato_Regular.h          Lato            SIL OFL 1.1
-//   Montserrat     "fonts/Montserrat_Regular.h    Montserrat      SIL OFL 1.1
-//   Open Sans      "fonts/OpenSans_Regular.h      Open Sans       SIL OFL 1.1
-//   Poppins        "fonts/Poppins_Regular.h       Poppins         SIL OFL 1.1
-//   Quicksand      "fonts/Quicksand_Regular.h     Quicksand       SIL OFL 1.1
-//   Raleway        "fonts/Raleway_Regular.h       Raleway         SIL OFL 1.1
-//   Roboto         "fonts/Roboto_Regular.h        Roboto          Apache v2.0
-//   Roboto Mono    "fonts/RobotoMono_Regular.h    Roboto Mono     Apache v2.0
-//   Roboto Slab    "fonts/RobotoSlab_Regular.h    Roboto Slab     Apache v2.0
-//   Ubuntu         "fonts/Ubuntu_R.h              Ubuntu font     UFL v1.0
-//   Ubuntu Mono    "fonts/UbuntuMono_R.h          Ubuntu font     UFL v1.0
+//   FONT                   HEADER FILE              FAMILY        LICENSE
+//   Allerta Stencil        AllertaStencil_Regular.h               SIL OFL v1.1
+//   Bangers Regular        Bangers_Regular.h                      SIL OFL v1.1
+//   Covered By Your Grace  CoveredByYourGrace_Regular.h           SIL OFL v1.1
+//   Graduate               Graduate_Regular.h                     SIL OFL v1.1
+//   FreeMono               FreeMono.h               GNU FreeFont  GNU GPL v3.0
+//   FreeSans               FreeSans.h               GNU FreeFont  GNU GPL v3.0
+//   FreeSerif              FreeSerif.h              GNU FreeFont  GNU GPL v3.0
+//   Lato                   Lato_Regular.h           Lato          SIL OFL v1.1
+//   Montserrat             Montserrat_Regular.h     Montserrat    SIL OFL v1.1
+//   Open Sans              OpenSans_Regular.h       Open Sans     SIL OFL v1.1
+//   Orbit                  Orbit_Regular.h                        SIL OFL v1.1
+//   Patrick Hand SC        PatrickHandSC_Regular.h                SIL OFL v1.1
+//   Permanent Marker       PermanentMarker_Regular.h              Apache v2.0
+//   Poppins                Poppins_Regular.h        Poppins       SIL OFL v1.1
+//   Quicksand              Quicksand_Regular.h      Quicksand     SIL OFL v1.1
+//   Raleway                Raleway_Regular.h        Raleway       SIL OFL v1.1
+//   Roboto                 Roboto_Regular.h         Roboto        Apache v2.0
+//   Roboto Mono            RobotoMono_Regular.h     Roboto Mono   Apache v2.0
+//   Roboto Slab            RobotoSlab_Regular.h     Roboto Slab   Apache v2.0
+//   Share Tech Mono        ShareTechMono_Regular.h                SIL OFL v1.1
+//   Syne Mono              SyneMono_Regular.h                     SIL OFL v1.1
+//   Ubuntu                 Ubuntu_R.h               Ubuntu font   UFL v1.0
+//   Ubuntu Mono            UbuntuMono_R.h           Ubuntu font   UFL v1.0
+//   VT323                  T323_Regular.h                         SIL OFL v1.1
 //
-// Included sizes: 6pt, 16pt, 20pt, 26pt, 32pt, 40pt, 48pt.
+// Included sizes: 6pt, 12pt, 16pt, 20pt, 26pt, 32pt, 40pt, 48pt.
 //
 // Adding new fonts or new sizes is relatively straightforward, see
 // fonts/README.

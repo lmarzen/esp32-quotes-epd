@@ -1,5 +1,6 @@
 #ifndef __FONTS_FREEMONO_H__
 #define __FONTS_FREEMONO_H__
+#include "FreeMono/FreeMono_12pt7b.h"
 #include "FreeMono/FreeMono_16pt7b.h"
 #include "FreeMono/FreeMono_20pt7b.h"
 #include "FreeMono/FreeMono_26pt7b.h"

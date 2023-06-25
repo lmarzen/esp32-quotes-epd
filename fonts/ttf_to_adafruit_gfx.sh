@@ -17,7 +17,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 TTF_FILES=ttf/*
 OUTPUT_PATH="./fonts"
-SIZES=(6 16 20 26 32 40 48)
+SIZES=(6 12 16 20 26 32 40 48)
 # TEMPERATURE_SIZES=(48)
 
 # clean fonts output
@@ -83,8 +83,8 @@ for fontfile in $TTF_FILES
   # done
 
   # clean up
-  echo "rm $SUBSET_OUT"
-  rm $SUBSET_OUT
+  # echo "rm $SUBSET_OUT"
+  # rm $SUBSET_OUT
   # echo "rm $REMAP_OUT"
   # rm $REMAP_OUT
 

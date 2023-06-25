@@ -1,5 +1,6 @@
 #ifndef __FONTS_ROBOTOMONO_REGULAR_H__
 #define __FONTS_ROBOTOMONO_REGULAR_H__
+#include "RobotoMono_Regular/RobotoMono_Regular_12pt7b.h"
 #include "RobotoMono_Regular/RobotoMono_Regular_16pt7b.h"
 #include "RobotoMono_Regular/RobotoMono_Regular_20pt7b.h"
 #include "RobotoMono_Regular/RobotoMono_Regular_26pt7b.h"
