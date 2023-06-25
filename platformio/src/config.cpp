@@ -80,8 +80,8 @@ const GFXfont *QUOTE_FONTS[] =
   &Roboto_Regular_32pt7b, &Roboto_Regular_26pt7b,
   &Roboto_Regular_26pt7b, &Roboto_Regular_20pt7b,
   &Ubuntu_R_20pt7b,       &Ubuntu_R_20pt7b,
-  &Ubuntu_R_16pt7b,       &Ubuntu_R_16pt7b
-  &Ubuntu_R_12pt7b,       &Ubuntu_R_12pt7b
+  &Ubuntu_R_16pt7b,       &Ubuntu_R_16pt7b,
+  &Ubuntu_R_12pt7b,       &Ubuntu_R_12pt7b,
 };
 const size_t QUOTE_FONTS_SZ = sizeof(QUOTE_FONTS) / sizeof(QUOTE_FONTS[0]);
 
