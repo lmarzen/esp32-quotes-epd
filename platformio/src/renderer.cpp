@@ -49,7 +49,7 @@ GxEPD2_3C<GxEPD2_750c_Z08, GxEPD2_750c_Z08::HEIGHT / 2> display(
 
 /* Returns the string width in pixels
  */
-uint16_t getStringWidth(String text)
+uint16_t getStringWidth(const String &text)
 {
   int16_t x1, y1;
   uint16_t w, h;
@@ -59,7 +59,7 @@ uint16_t getStringWidth(String text)
 
 /* Returns the string height in pixels
  */
-uint16_t getStringHeight(String text)
+uint16_t getStringHeight(const String &text)
 {
   int16_t x1, y1;
   uint16_t w, h;
@@ -81,19 +81,82 @@ uint16_t getCurrentFontHeight()
 
 /* Draws a string with alignment
  */
-void drawString(int16_t x, int16_t y, String text, alignment_t alignment,
-                uint16_t color)
+void drawString(int16_t x, int16_t y, const String &text, alignment_t alignment,
+                uint16_t color, uint16_t justify_width)
 {
   int16_t x1, y1;
   uint16_t w, h;
   display.setTextColor(color);
+  if (alignment == JUSTIFY)
+  {
+    std::vector<String> words;
+    int start = 0;
+    for (int i = 0; i < text.length(); ++i)
+    {
+      if (text[i] == ' ')
+      {
+        if (i == start)
+        { // special case to ignore consecutive spaces
+          start = i + 1;
+          continue;
+        }
+        words.push_back(text.substring(start, i));
+        start = i + 1;
+      }
+    }
+    words.push_back(text.substring(start, text.length()));
+
+    std::vector<int16_t> word_widths;
+    // add up total width of words (excludes whitespace)
+    int16_t text_width = 0;
+    for (const String &word : words)
+    {
+      display.getTextBounds(word, x, y, &x1, &y1, &w, &h);
+      word_widths.push_back(w);
+      text_width += w;
+    }
+
+    int16_t whitespace_width = justify_width - text_width;
+    int16_t whitespace_step = 0;
+    int16_t whitespace_extra = 0;
+    if (words.size() > 1)
+    {
+      whitespace_step = whitespace_width / (words.size() - 1);
+      whitespace_extra = whitespace_width % (words.size() - 1);
+    }
+
+    display.setCursor(x, y);
+    int16_t x_cursor = x;
+
+    for (int i = 0; i < words.size(); ++i)
+    {
+      display.print(words[i]);
+      x_cursor += word_widths[i];
+      x_cursor += whitespace_step;
+      if (whitespace_extra > 0)
+      {
+        x_cursor += 1;
+        whitespace_extra -= 1;
+      }
+      display.setCursor(x_cursor, y);
+    }
+
+    // correct cursor position
+    display.setCursor(x + justify_width, y);
+    return;
+  }
   display.getTextBounds(text, x, y, &x1, &y1, &w, &h);
   if (alignment == RIGHT)
+  {
     x = x - w;
+  }
   if (alignment == CENTER)
+  {
     x = x - w / 2;
+  }
   display.setCursor(x, y);
   display.print(text);
+  return;
 } // end drawString
 
 /* Draws a string that will flow into the next line when max_width is reached.
@@ -105,9 +168,9 @@ void drawString(int16_t x, int16_t y, String text, alignment_t alignment,
  *       max_width exist in text, then the string will be printed beyond
  *       max_width.
  */
-void drawMultiLnString(int16_t x, int16_t y, String text, alignment_t alignment,
-                       uint16_t max_width, uint16_t max_lines,
-                       int16_t line_spacing, uint16_t color)
+void drawMultiLnString(int16_t x, int16_t y, const String &text,
+                       alignment_t alignment, uint16_t max_width,
+                       uint16_t max_lines, int16_t line_spacing, uint16_t color)
 {
   uint16_t current_line = 0;
   String textRemaining = text;
@@ -187,7 +250,8 @@ void drawMultiLnString(int16_t x, int16_t y, String text, alignment_t alignment,
       } // end if (splitAt != -1)
     } // end inner while
 
-    drawString(x, y + (current_line * line_spacing), subStr, alignment, color);
+    drawString(x, y + (current_line * line_spacing), subStr, alignment, color,
+                       max_width);
 
     // update textRemaining to no longer include what was printed
     // +1 for exclusive bounds, +1 to get passed space/dash
@@ -229,7 +293,7 @@ void initDisplay()
  *       max_width exist in text, then the string will be printed beyond
  *       max_width.
  */
-bool splitQuote(std::vector<String> *dest, String quote,
+bool splitQuote(std::vector<String> *dest, const String &quote,
                 uint16_t max_width, uint16_t max_lines)
 {
   uint16_t current_line = 0;
@@ -260,7 +324,6 @@ bool splitQuote(std::vector<String> *dest, String quote,
     int keepLastChar = 0;
     while (w > max_width && splitAt != -1)
     {
-      // Serial.println("\"" + textRemaining + "\"");
       if (keepLastChar)
       {
         // if we kept the last character during the last iteration of this while
@@ -295,7 +358,6 @@ bool splitQuote(std::vector<String> *dest, String quote,
           keepLastChar = 0;
           subStr.remove(endIndex);
           --endIndex;
-          // Serial.println("end removed subStr = " + subStr);
         }
         else if (lastChar == '-')
         {
@@ -399,7 +461,11 @@ void drawQuote(const String &quote)
     i += 2;
   }
 
-  Serial.println("Drawing " + String(lines.size()) + " line(s): ");
+  int total_lines = lines.size();
+  if (!author.isEmpty()) {
+    total_lines += 1;
+  }
+  Serial.println("Drawing " + String(total_lines) + " line(s): ");
 
   int totalHeight = qLineHeight + (lines.size() - 1) * q_dy;
   totalHeight += a_dy;
@@ -409,6 +475,17 @@ void drawQuote(const String &quote)
   for (int l = 0; l < lines.size(); ++l) {
     switch (static_cast<alignment_t>(QUOTE_JUSTIFICATION))
     {
+    case JUSTIFY:
+      if (l != lines.size() - 1)
+      {
+        drawString(MARGIN_X, y, lines[l], JUSTIFY, ACCENT_COLOR,
+                   DISP_WIDTH - (2 * MARGIN_X));
+      }
+      else
+      {
+        drawString(MARGIN_X, y, lines[l], LEFT, ACCENT_COLOR);
+      }
+      break;
     case LEFT:
       drawString(MARGIN_X, y, lines[l], LEFT, ACCENT_COLOR);
       break;
@@ -430,6 +507,7 @@ void drawQuote(const String &quote)
     display.setFont(QUOTE_FONTS[i - 1]);
     switch (static_cast<alignment_t>(AUTHOR_JUSTIFICATION))
     {
+    case JUSTIFY:
     case LEFT:
       drawString(MARGIN_X, y, author, LEFT, ACCENT_COLOR);
       break;
@@ -441,8 +519,8 @@ void drawQuote(const String &quote)
       drawString(DISP_WIDTH / 2, y, author, CENTER, ACCENT_COLOR);
       break;
     }
+    Serial.println("  " + author);
   }
-
 
   return;
 } // end drawQuote
@@ -451,8 +529,8 @@ void drawQuote(const String &quote)
 /* This function is responsible for drawing the status bar along the bottom of
  * the display.
  */
-void drawStatusBar(String statusStr, String refreshTimeStr, int rssi,
-                   double batVoltage)
+void drawStatusBar(const String &statusStr, const String &refreshTimeStr,
+                   int rssi, double batVoltage)
 {
   String dataStr;
   uint16_t dataColor = GxEPD_BLACK;

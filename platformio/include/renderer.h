@@ -39,21 +39,22 @@ typedef enum alignment
 {
   LEFT,
   RIGHT,
-  CENTER
+  CENTER,
+  JUSTIFY
 } alignment_t;
 
-uint16_t getStringWidth(String text);
-uint16_t getStringHeight(String text);
-void drawString(int16_t x, int16_t y, String text, alignment_t alignment,
-                uint16_t color=GxEPD_BLACK);
-void drawMultiLnString(int16_t x, int16_t y, String text, alignment_t alignment,
-                       uint16_t max_width, uint16_t max_lines,
-                       int16_t line_spacing, uint16_t color=GxEPD_BLACK);
+uint16_t getStringWidth(const String &text);
+uint16_t getStringHeight(const String &text);
+void drawString(int16_t x, int16_t y, const String &text, alignment_t alignment,
+                uint16_t color=GxEPD_BLACK, uint16_t justify_width=DISP_WIDTH);
+void drawMultiLnString(int16_t x, int16_t y, const String &text, 
+                       alignment_t alignment, uint16_t max_width,
+                       uint16_t max_lines, int16_t line_spacing, 
+                       uint16_t color=GxEPD_BLACK);
 void initDisplay();
 void drawQuote(const String &quote);
-
-void drawStatusBar(String statusStr, String refreshTimeStr, int rssi,
-                   double batVoltage);
+void drawStatusBar(const String &statusStr, const String &refreshTimeStr,
+                   int rssi, double batVoltage);
 void drawError(const uint8_t *bitmap_196x196,
                const String &errMsgLn1, const String &errMsgLn2);
 

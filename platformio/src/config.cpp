@@ -41,10 +41,11 @@ const String GS_ENDPOINT = "script.google.com";
 // MARGINS, JUSTIFICATION, & FONT SIZES
 const int MARGIN_X = 40;
 const int MARGIN_Y = 24;
-// Left   = 0
-// Right  = 1
-// Center = 2
-const int QUOTE_JUSTIFICATION = 2;
+// Left    = 0
+// Right   = 1
+// Center  = 2
+// Justify = 3
+const int QUOTE_JUSTIFICATION = 3;
 const int AUTHOR_JUSTIFICATION = 1;
 
 // QUOTE SELECTION METHOD
