@@ -50,7 +50,7 @@ const int AUTHOR_JUSTIFICATION = 1;
 // QUOTE SELECTION METHOD
 // Choose from the following selection methods.
 //   "rand"    - Choose a quote from the first column completely at random.
-//   "shuffle" - Each call read the next quote. Once we have shown all the
+//   "shuffle" - Each call reads the next quote. Once we have shown all the
 //               quotes once, shuffle them.
 //               Uses cell B1 as a pointer to the last read cell.
 //   "iter"    - Loops through the quotes in order.
