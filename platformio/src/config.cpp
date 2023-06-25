@@ -104,7 +104,7 @@ const char *NTP_SERVER_2 = "time.nist.gov";
 // Aligned to the nearest minute boundary and must evenly divide 60.
 // For example, if set to 30 (minutes) the display will update at 00 or 30
 // minutes past the hour.
-const long SLEEP_DURATION = 24 * 60;
+const long SLEEP_DURATION = 24 * 60; // 24 hours
 // If BED_TIME == WAKE_TIME, then this battery saving feature will be disabled.
 // (range: [0-23])
 const int BED_TIME  = 00; // Last update at 00:00 (midnight) until WAKE_TIME.

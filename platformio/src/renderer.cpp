@@ -376,6 +376,7 @@ void drawQuote(const String &quote)
   uint16_t qLineHeight = 0;
   uint16_t aLineHeight = 0;
   uint16_t q_dy = 0;
+  uint16_t a_dy = 0;
   uint16_t maxLines = 0;
 
   while(!fitsScreen && i + 1 < QUOTE_FONTS_SZ) {
@@ -383,13 +384,14 @@ void drawQuote(const String &quote)
     {
       display.setFont(QUOTE_FONTS[i + 1]);
       aLineHeight = getCurrentFontHeight();
+      a_dy = aLineHeight + (aLineHeight / 4);
     }
 
     display.setFont(QUOTE_FONTS[i]);
     qLineHeight = getCurrentFontHeight();
     q_dy = qLineHeight + (qLineHeight / 4);
 
-    maxLines = ((DISP_HEIGHT - MARGIN_Y * 2) - aLineHeight) / q_dy;
+    maxLines = ((DISP_HEIGHT - MARGIN_Y * 2) - a_dy) / q_dy;
 
     lines.clear();
     fitsScreen = splitQuote(&lines, quoteBody,
@@ -400,7 +402,7 @@ void drawQuote(const String &quote)
   Serial.println("Drawing " + String(lines.size()) + " line(s): ");
 
   int totalHeight = qLineHeight + (lines.size() - 1) * q_dy;
-  totalHeight += aLineHeight;
+  totalHeight += a_dy;
   int y = (DISP_HEIGHT / 2) - (totalHeight / 2)
           + (qLineHeight / 2) + (qLineHeight / 3);
 
@@ -424,6 +426,7 @@ void drawQuote(const String &quote)
   }
 
   if (!author.isEmpty()) {
+    y = y - q_dy + a_dy;
     display.setFont(QUOTE_FONTS[i - 1]);
     switch (static_cast<alignment_t>(AUTHOR_JUSTIFICATION))
     {
