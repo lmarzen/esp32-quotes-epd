@@ -121,11 +121,22 @@ Cut the low power pad for even longer battery life.
 
 <p float="left">
   <img src="showcase/wiring_diagram.png" width="66%" />
-  <img src="showcase/demo-tucson.jpg" width="32%" />
 </p>
 
 
 ### Configuration, Compilation, and Upload
+
+Google Sheet
+
+1. First, you will need to create a Google sheet and store your quotes in the first column (i.e. column A). (https://docs.google.com/spreadsheet)
+
+2. Note down the Sheet ID, located in the URL. You will need to copy this into the Google Script you will set up next.
+
+3. Optionally specify an author for each quote. The author is indicated with an at sign, '@'. If you really want to include an at sign in a quote, you must escape it first with a backslash, '\\@'.
+
+4. You can force your own line breaks by starting new lines within the quotes cell using (Ctrl + Enter). The author will always be displayed on a new line.
+
+Google Script
 
 PlatformIO for VSCode is used for managing dependencies, code compilation, and uploading to ESP32.
 
@@ -172,24 +183,6 @@ PlatformIO for VSCode is used for managing dependencies, code compilation, and u
       - You will only see this if you have the PlatformIO extension installed.
 
       - If you are getting errors during the upload process, you may need to install drivers to allow you to upload code to the ESP32.
-
-### OpenWeatherMap API Key
-
-Sign up here to get an API key; it's free. https://openweathermap.org/api
-
-This project will make calls to 2 different APIs ("One Call" and "Air Pollution").
-
-> **Note**
-> OpenWeatherMap One Call 2.5 API has been deprecated for all new free users (accounts created after Summer 2022). Fortunately, you can make 1,000 calls/day to the One Call 3.0 API for free by following the steps below.
-
-- If you have an account created before Summer 2022, you can simply use the One Call 2.5 API by setting `OWM_ONECALL_VERSION = "2.5";` in config.cpp.
-
-- Otherwise, the One Call API 3.0 is only included in the "One Call by Call" subscription. This separate subscription includes 1,000 calls/day for free and allows you to pay only for the number of API calls made to this product.
-
-Here's how to subscribe and avoid any credit card changes:
-   - Go to https://home.openweathermap.org/subscriptions/billing_info/onecall_30/base?key=base&service=onecall_30
-   - Follow the instructions to complete the subscription.
-   - Go to https://home.openweathermap.org/subscriptions and set the "Calls per day (no more than)" to 1,000. This ensures you will never overrun the free calls
 
 ## Licensing
 
