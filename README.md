@@ -184,7 +184,7 @@ Google Script
   <img src="showcase/instructions/google-script-4.jpg" width="40%" />
 </p>
 
-   f. Click `Show Advanced` the `Go to <project_name> (unsafe)`.
+   f. Click `Show Advanced` then `Go to <project_name> (unsafe)`.
    
 <p float="left">
   <img src="showcase/instructions/google-script-5.jpg" width="40%" />
