@@ -30,19 +30,19 @@ Multiple quote selection options,
 
 Quotes are automatically scaled to fit the screen optimally.
 
-Alignment for quotes and authors can be controlled independently.
+Alignment and font for quotes and authors can be controlled independently.
 
-Support for multiple fonts, I have included a number of open-source fonts. If you want to add more see [fonts/README](fonts/README) .
+Support for multiple fonts, I have included a number of open-source fonts. If you want to add more, see [fonts/README](fonts/README).
 
-
+Use different fonts depending on the length of the quote, or use the same font all around. Up to you!
 
 Here are a handful of examples:
 
 <p float="left">
-  <img src="showcase/demo-new-york.jpg" width="24%" />
-  <img src="showcase/demo-london.jpg" width="24%" />
-  <img src="showcase/demo-new-york.jpg" width="24%" />
-  <img src="showcase/demo-london.jpg" width="24%" />
+  <img src="showcase/assembled-demo-example-front.jpg" width="24%" />
+  <img src="showcase/assembled-demo-goforth-front.jpg" width="24%" />
+  <img src="showcase/assembled-demo-nintendo-front.jpg" width="24%" />
+  <img src="showcase/assembled-demo-williams-front.jpg" width="24%" />
 </p>
 
 ## Setup Guide
