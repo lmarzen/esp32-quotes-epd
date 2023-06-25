@@ -161,32 +161,45 @@ Google Script
    a. In the top right corner, click `Deploy->New deployment`.
 
    b. Click the gear next to `Select type`, then select `Web app`.
+   
 <p float="left">
-  <img src="showcase/instructions/google-script-1.jpg" width="66%" />
+  <img src="showcase/instructions/google-script-1.jpg" width="40%" />
 </p>
+
    c. Give a description, then set `Who has access` to `Anyone`.
+   
 <p float="left">
-  <img src="showcase/instructions/google-script-2.jpg" width="66%" />
+  <img src="showcase/instructions/google-script-2.jpg" width="40%" />
 </p>
+
    d. Click `Authorize access`.
+   
 <p float="left">
-  <img src="showcase/instructions/google-script-3.jpg" width="66%" />
+  <img src="showcase/instructions/google-script-3.jpg" width="40%" />
 </p>
+
    e. Choose your account.
+   
 <p float="left">
-  <img src="showcase/instructions/google-script-4.jpg" width="66%" />
+  <img src="showcase/instructions/google-script-4.jpg" width="40%" />
 </p>
+
    f. Click `Show Advanced` the `Go to <project_name> (unsafe)`.
+   
 <p float="left">
-  <img src="showcase/instructions/google-script-5.jpg" width="66%" />
+  <img src="showcase/instructions/google-script-5.jpg" width="40%" />
 </p>
+
    g. Click `Allow`.
+   
 <p float="left">
-  <img src="showcase/instructions/google-script-6.jpg" width="66%" />
+  <img src="showcase/instructions/google-script-6.jpg" width="40%" />
 </p>
+
    h. Then copy the `Deployment ID`. You will need to update the GS_DEPLOYMENT_ID with this string in [config.cpp](platformio/src/config.cpp).
+   
 <p float="left">
-  <img src="showcase/instructions/google-script-7.jpg" width="66%" />
+  <img src="showcase/instructions/google-script-7.jpg" width="40%" />
 </p>
    
 
