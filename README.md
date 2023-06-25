@@ -254,18 +254,28 @@ esp32-quote-epd is licensed under the [GNU General Public License v3.0](LICENSE)
 | Name | License | Description |
 |---------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
 | [Adafruit-GFX-Library: fontconvert](https://github.com/adafruit/Adafruit-GFX-Library/tree/master/fontconvert) | [BSD License](fonts/fontconvert/license.txt) | CLI tool for preprocessing fonts to be used with the Adafruit_GFX Arduino library. |
+| [Allerta Stencil](https://fonts.google.com/specimen/Allerta+Stencil) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | Font Family |
+| [Bangers](https://fonts.google.com/specimen/Bangers) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | Font Family |
+| [Covered By Your Grace](https://fonts.google.com/specimen/Covered+By+Your+Grace) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | Font Family |
 | [GNU FreeFont](https://www.gnu.org/software/freefont/) | [GNU General Public License v3.0](https://www.gnu.org/software/freefont/license.html) | Font Family |
-| [Lato](https://fonts.google.com/specimen/Lato) | [SIL OFL 1.1](http://scripts.sil.org/OFL) | Font Family |
-| [Montserrat](https://fonts.google.com/specimen/Montserrat) | [SIL OFL 1.1](http://scripts.sil.org/OFL) | Font Family |
-| [Open Sans](https://fonts.google.com/specimen/Open+Sans) | [SIL OFL 1.1](http://scripts.sil.org/OFL) | Font Family |
-| [Poppins](https://fonts.google.com/specimen/Poppins) | [SIL OFL 1.1](http://scripts.sil.org/OFL) | Font Family |
-| [Quicksand](https://fonts.google.com/specimen/Quicksand) | [SIL OFL 1.1](http://scripts.sil.org/OFL) | Font Family |
-| [Raleway](https://fonts.google.com/specimen/Raleway) | [SIL OFL 1.1](http://scripts.sil.org/OFL) | Font Family |
+| [Graduate](https://fonts.google.com/specimen/Graduate) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | Font Family |
+| [Lato](https://fonts.google.com/specimen/Lato) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | Font Family |
+| [Montserrat](https://fonts.google.com/specimen/Montserrat) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | Font Family |
+| [Open Sans](https://fonts.google.com/specimen/Open+Sans) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | Font Family |
+| [Orbit](https://fonts.google.com/specimen/Orbit) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | Font Family |
+| [Patrick Hand SC](https://fonts.google.com/specimen/Patrick+Hand+SC) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | Font Family |
+| [Permanent Marker](https://fonts.google.com/specimen/Permanent+Marker) | [Apache License v2.0](https://www.apache.org/licenses/LICENSE-2.0) | Font Family |
+| [Poppins](https://fonts.google.com/specimen/Poppins) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | Font Family |
+| [Quicksand](https://fonts.google.com/specimen/Quicksand) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | Font Family |
+| [Raleway](https://fonts.google.com/specimen/Raleway) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | Font Family |
 | [Roboto](https://fonts.google.com/specimen/Roboto) | [Apache License v2.0](https://www.apache.org/licenses/LICENSE-2.0) | Font Family |
 | [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono) | [Apache License v2.0](https://www.apache.org/licenses/LICENSE-2.0) | Font Family |
 | [Roboto Slab](https://fonts.google.com/specimen/Roboto+Slab) | [Apache License v2.0](https://www.apache.org/licenses/LICENSE-2.0) | Font Family |
+| [Share Tech Mono](https://fonts.google.com/specimen/Share+Tech+Mono) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | Font Family |
+| [Syne Mono](https://fonts.google.com/specimen/Syne+Mono) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | Font Family |
 | [Ubuntu font](https://design.ubuntu.com/font) | [Ubuntu Font Licence v1.0](https://ubuntu.com/legal/font-licence) | Font Family |
-| [Weather Themed Icons](https://github.com/erikflowers/weather-icons) | [SIL OFL 1.1](http://scripts.sil.org/OFL) | (wi-**.svg) Weather icon family by Lukas Bischoff/Erik Flowers. |
+| [VT323](https://fonts.google.com/specimen/VT323) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | Font Family |
+| [Weather Themed Icons](https://github.com/erikflowers/weather-icons) | [SIL OFL v1.1](http://scripts.sil.org/OFL) | (wi-**.svg) Weather icon family by Lukas Bischoff/Erik Flowers. |
 | [Google Icons](https://fonts.google.com/icons) | [Apache License v2.0](https://www.apache.org/licenses/LICENSE-2.0) | (battery**.svg) Battery icons from Google Icons. |
 | [Phosphor Icons](https://github.com/phosphor-icons/homepage) | [MIT License](http://opensource.org/licenses/mit-license.html) | (wifi**.svg, warning_icon.svg, error_icon.svg) WiFi, Warning, and Error icons from Phosphor Icons. |
 
