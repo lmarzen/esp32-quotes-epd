@@ -140,11 +140,11 @@ Google Sheet
 
 4. Optionally specify an author for each quote. The author is indicated with an at sign, '@'. If you really want to include an at sign in a quote, you must escape it first with a backslash, '\\@'.
 
-5. You can force your own line breaks by starting new lines within the quotes cell using (Ctrl + Enter). The author will always be displayed on a new line.
+5. You can force your own line breaks by starting new lines within the quotes cell using `Ctrl + Enter`. The author will always be displayed on a new line.
 
 Google Script
 
-1. Navigate to Google Apps Script. Google Apps Script enables us to create a script to that can interact with the Google Sheet we just created.
+1. Navigate to Google Apps Script. Google Apps Script enables us to create a script that can interact with the Google Sheet we just created.
 
 <p float="left">
   <img src="showcase/instructions/nav-to-apps-script.jpg" width="66%" />
