@@ -143,25 +143,21 @@ PlatformIO for VSCode is used for managing dependencies, code compilation, and u
 
 5. Configure Options.
 
-   - Most configuration options are located in [config.cpp](platformio/src/config.cpp), with a few  in [config.h](platformio/include/config.h). Locale/language options can also be found in locales/locale_**.cpp.
+   - Most configuration options are located in [config.cpp](platformio/src/config.cpp), with a few  in [config.h](platformio/include/config.h).
 
    - Important settings to configure in config.cpp:
 
      - WiFi credentials (ssid, password).
 
-     - Open Weather Map API key (it's free, see next section for important notes about obtaining an API key).
-
-     - Latitude and longitude.
-
-     - Time and date formats.
+     - Google script deployment ID.
 
      - Sleep duration.
 
-     - Pin connections for E-Paper (SPI), BME280 (I2C), and battery voltage (ADC).
+     - Pin connections for E-Paper (SPI), and battery voltage (ADC).
 
    - Important settings to configure in config.h:
 
-     - Units (Metric or Imperial).
+     - Fonts.
 
    - Comments explain each option in detail.
 
@@ -193,44 +189,15 @@ This project will make calls to 2 different APIs ("One Call" and "Air Pollution"
 Here's how to subscribe and avoid any credit card changes:
    - Go to https://home.openweathermap.org/subscriptions/billing_info/onecall_30/base?key=base&service=onecall_30
    - Follow the instructions to complete the subscription.
-   - Go to https://home.openweathermap.org/subscriptions and set the "Calls per day (no more than)" to 1,000. This ensures you will never overrun the free calls.
-
-## Error Messages and Troubleshooting
-
-### Low Battery
-<img src="showcase/demo-error-low-battery.jpg" align="left" width="25%" />
-This error screen appears once the battery voltage has fallen below LOW_BATTERY_VOLTAGE (default = 3.20v). The display will not refresh again until it detects battery voltage above LOW_BATTERY_VOLTAGE. When battery voltage is between LOW_BATTERY_VOLTAGE and VERY_LOW_BATTERY_VOLTAGE (default = 3.10v) the esp32 will deep-sleep for periods of LOW_BATTERY_SLEEP_INTERVAL (default = 30min) before checking battery voltage again. If the battery voltage falls between LOW_BATTERY_SLEEP_INTERVAL and CRIT_LOW_BATTERY_VOLTAGE (default = 3.00v), then the display will deep-sleep for periods VERY_LOW_BATTERY_SLEEP_INTERVAL (default = 120min). If battery voltage falls below CRIT_LOW_BATTERY_VOLTAGE, then the esp32 will enter hibernate mode and will require a manual push of the reset (RST) button to begin updating again.
-
-<br clear="left"/>
-
-### WiFi Connection
-<img src="showcase/demo-error-wifi.jpg" align="left" width="25%" />
-This error screen appears when the ESP32 fails to connect to WiFi. If the message reads "WiFi Connection Failed" this might indicate an incorrect password. If the message reads "SSID Not Available" this might indicate that you mistyped the SSID or that the esp32 is out of the range of the access point. The esp32 will retry once every SLEEP_DURATION (default = 30min).
-
-<br clear="left"/>
-
-### API Error
-<img src="showcase/demo-error-api.jpg" align="left" width="25%" />
-This error screen appears if an error (client or server) occurs when making an API request to OpenWeatherMap. The second line will give the error code followed by a descriptor phrase. Positive error codes correspond to HTTP response status codes, while error codes <= 0 indicate a client(esp32) error. The esp32 will retry once every SLEEP_DURATION (default = 30min).
-<br/><br/>
-In the example shown to the left, "401: Unauthorized" may be the result of an incorrect API key or that you are attempting to use the One Call v3 API without the proper account setup.
-
-<br clear="left"/>
-
-### Time Server Error
-<img src="showcase/demo-error-time.jpg" align="left" width="25%" />
-This error screen appears when the esp32 fails to fetch the time from NTP_SERVER_1/NTP_SERVER_2. This error sometimes occurs immediately after uploading to the esp32; in this case, just hit the reset button or wait for SLEEP_DURATION (default = 30min) and the esp32 to automatically retry.
-
-<br clear="left"/>
+   - Go to https://home.openweathermap.org/subscriptions and set the "Calls per day (no more than)" to 1,000. This ensures you will never overrun the free calls
 
 ## Licensing
 
-esp32-weather-epd is licensed under the [GNU General Public License v3.0](LICENSE) with tools, fonts, and icons whose licenses are as follows:
+esp32-quote-epd is licensed under the [GNU General Public License v3.0](LICENSE) with tools, fonts, and icons whose licenses are as follows:
 
 | Name | License | Description |
 |---------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
 | [Adafruit-GFX-Library: fontconvert](https://github.com/adafruit/Adafruit-GFX-Library/tree/master/fontconvert) | [BSD License](fonts/fontconvert/license.txt) | CLI tool for preprocessing fonts to be used with the Adafruit_GFX Arduino library. |
-| [pollutant-concentration-to-aqi](https://github.com/lmarzen/pollutant-concentration-to-aqi) | [GNU Lesser General Public License v2.1](platformio/lib/pollutant-concentration-to-aqi/LICENSE) | C library that converts pollutant concentrations to Air Quality Index(AQI). |
 | [GNU FreeFont](https://www.gnu.org/software/freefont/) | [GNU General Public License v3.0](https://www.gnu.org/software/freefont/license.html) | Font Family |
 | [Lato](https://fonts.google.com/specimen/Lato) | [SIL OFL 1.1](http://scripts.sil.org/OFL) | Font Family |
 | [Montserrat](https://fonts.google.com/specimen/Montserrat) | [SIL OFL 1.1](http://scripts.sil.org/OFL) | Font Family |
@@ -243,11 +210,6 @@ esp32-weather-epd is licensed under the [GNU General Public License v3.0](LICENS
 | [Roboto Slab](https://fonts.google.com/specimen/Roboto+Slab) | [Apache License v2.0](https://www.apache.org/licenses/LICENSE-2.0) | Font Family |
 | [Ubuntu font](https://design.ubuntu.com/font) | [Ubuntu Font Licence v1.0](https://ubuntu.com/legal/font-licence) | Font Family |
 | [Weather Themed Icons](https://github.com/erikflowers/weather-icons) | [SIL OFL 1.1](http://scripts.sil.org/OFL) | (wi-**.svg) Weather icon family by Lukas Bischoff/Erik Flowers. |
-| [Google Icons](https://fonts.google.com/icons) | [Apache License v2.0](https://www.apache.org/licenses/LICENSE-2.0) | (battery**.svg, visibility_icon.svg) Battery and visibility icons from Google Icons. |
-| [Biological Hazard Symbol](https://svgsilh.com/image/37775.html) | [CC0 1.0](https://en.wikipedia.org/wiki/Public_domain) | (biological_hazard_symbol.svg) Biohazard icon. |
-| [House Icon](https://seekicon.com/free-icon/house_16) | [MIT License](http://opensource.org/licenses/mit-license.html) | (house.svg) House icon. |
-| [Indoor Temerature/Humidity Icons](icons/svg) | [SIL OFL 1.1](http://scripts.sil.org/OFL) | (house_**.svg) Indoor temerature/humidity icons. |
-| [Ionizing Radiation Symbol](https://svgsilh.com/image/309911.html) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | (ionizing_radiation_symbol.svg) Ionizing radiation icons. |
+| [Google Icons](https://fonts.google.com/icons) | [Apache License v2.0](https://www.apache.org/licenses/LICENSE-2.0) | (battery**.svg) Battery and visibility icons from Google Icons. |
 | [Phosphor Icons](https://github.com/phosphor-icons/homepage) | [MIT License](http://opensource.org/licenses/mit-license.html) | (wifi**.svg, warning_icon.svg, error_icon.svg) WiFi, Warning, and Error icons from Phosphor Icons. |
-| [Wind Direction Icon](https://www.onlinewebfonts.com/icon/251550) | [CC BY 3.0](http://creativecommons.org/licenses/by/3.0) | (meteorological_wind_direction_**deg.svg) Meteorological wind direction icon from Online Web Fonts. |
 
