@@ -67,7 +67,7 @@
 //   Syne Mono              SyneMono_Regular.h                     SIL OFL v1.1
 //   Ubuntu                 Ubuntu_R.h               Ubuntu font   UFL v1.0
 //   Ubuntu Mono            UbuntuMono_R.h           Ubuntu font   UFL v1.0
-//   VT323                  T323_Regular.h                         SIL OFL v1.1
+//   VT323                  VT323_Regular.h                        SIL OFL v1.1
 //
 // Included sizes: 6pt, 12pt, 16pt, 20pt, 26pt, 32pt, 40pt, 48pt.
 //
