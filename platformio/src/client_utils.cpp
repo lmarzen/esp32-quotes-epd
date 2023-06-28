@@ -1,4 +1,4 @@
-/* Client side utilities for esp32-quote-epd.
+/* Client side utilities for esp32-quotes-epd.
  * Copyright (C) 2022-2023  Luke Marzen
  *
  * This program is free software: you can redistribute it and/or modify

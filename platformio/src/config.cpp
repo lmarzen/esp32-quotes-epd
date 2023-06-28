@@ -1,4 +1,4 @@
-/* Configuration options for esp32-quote-epd.
+/* Configuration options for esp32-quotes-epd.
  * Copyright (C) 2022-2023  Luke Marzen
  *
  * This program is free software: you can redistribute it and/or modify

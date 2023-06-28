@@ -1,4 +1,4 @@
-/* Custom strftime ISO C library routine for esp32-quote-epd.
+/* Custom strftime ISO C library routine for esp32-quotes-epd.
  * Copyright (C) 2023  Luke Marzen
  *
  * This program is free software: you can redistribute it and/or modify

@@ -249,7 +249,7 @@ PlatformIO for VSCode is used for managing dependencies, code compilation, and u
 
 ## Licensing
 
-esp32-quote-epd is licensed under the [GNU General Public License v3.0](LICENSE) with tools, fonts, and icons whose licenses are as follows:
+esp32-quotes-epd is licensed under the [GNU General Public License v3.0](LICENSE) with tools, fonts, and icons whose licenses are as follows:
 
 | Name | License | Description |
 |---------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
