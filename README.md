@@ -201,7 +201,9 @@ Google Script
 <p float="left">
   <img src="showcase/instructions/google-script-7.jpg" width="40%" />
 </p>
-   
+
+   > **Note**
+   > If you make changes to the Google script in the future, you must repeat the deployment process, update the Deployment ID in config.cpp, and reupload the code to the ESP32.
 
 PlatformIO for VSCode is used for managing dependencies, code compilation, and uploading to ESP32.
 
